@@ -23,6 +23,13 @@ group :development do
   gem "solargraph",          "0.48.0"
   gem "irb",                 "1.10.0"
   gem "repl_type_completor", "0.1.0"
+  gem "rubocop", require: false
+  gem "rubocop-performance", require: false
+  gem "rubocop-rails", require: false
+  gem "rubocop-minitest", require: false
+  gem "rubocop-packaging", require: false
+  gem "rubocop-md", require: false
+  gem "rubocop-rspec", require: false
 end
 
 group :test do
