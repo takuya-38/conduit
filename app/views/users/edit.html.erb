@@ -37,7 +37,7 @@
           </fieldset>
         </form>
         <hr />
-        <button class="btn btn-outline-danger">Or click here to logout.</button>
+        <%= button_to "Or click here to logout.", logout_path, method: :post, class: "btn btn-outline-danger", data: { "turbo-method": :delete } %>
       </div>
     </div>
   </div>
