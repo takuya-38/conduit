@@ -21,5 +21,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     follow_redirect!
     assert_template "article/home"
+    assert_predicate(self, :is_logged_in?)
   end
 end

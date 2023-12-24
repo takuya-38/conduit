@@ -5,4 +5,9 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     get login_path
     assert_response :success
   end
+
+  # test "should get logout" do
+  #   get logout_path
+  #   assert_response :success
+  # end
 end
