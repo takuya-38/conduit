@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.2.2"
 
 gem "rails",           "7.0.4.3"
+gem "bcrypt",          "3.1.18"
+gem "bootstrap-sass",  "3.4.1"
 gem "sassc-rails",     "2.1.2"
 gem "sprockets-rails", "3.4.2"
 gem "importmap-rails", "1.1.5"
@@ -23,6 +25,13 @@ group :development do
   gem "solargraph",          "0.48.0"
   gem "irb",                 "1.10.0"
   gem "repl_type_completor", "0.1.0"
+  gem "rubocop", require: false
+  gem "rubocop-performance", require: false
+  gem "rubocop-rails", require: false
+  gem "rubocop-minitest", require: false
+  gem "rubocop-packaging", require: false
+  gem "rubocop-md", require: false
+  gem "rubocop-rspec", require: false
 end
 
 group :test do

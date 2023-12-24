@@ -2,6 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
     <title>Conduit</title>
     <!-- Import Ionicon icons & Google Fonts our Bootstrap theme relies on -->
     <link
