@@ -4,7 +4,7 @@ class ArticleTest < ActiveSupport::TestCase
   def setup
     @user = users(:michael)
     # このコードは慣習的に正しくない
-    @article = Article.new(content: "Lorem ipsum", user_id: @user.id)
+    @article = @user.articles.build(content: "Lorem ipsum")
   end
 
   test "should be valid" do
@@ -24,5 +24,9 @@ class ArticleTest < ActiveSupport::TestCase
   test "content should be at most 800 characters" do
     @article.content = "a" * 801
     assert_not @article.valid?
+  end
+
+  test "order should be most recent first" do
+    assert_equal articles(:most_recent), Article.first
   end
 end
