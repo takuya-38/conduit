@@ -7,7 +7,7 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get show" do
-    get articles_show_url
+    get show_path
     assert_response :success
   end
 

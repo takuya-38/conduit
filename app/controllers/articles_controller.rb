@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
   end
 
   def home
+    @articles = Article.all.paginate(page: params[:page])
   end
 
   def show

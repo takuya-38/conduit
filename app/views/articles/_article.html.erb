@@ -1,0 +1,24 @@
+<div class="article-preview">
+  <div class="article-meta">
+    <%= link_to article.user do %>
+      <%# image_tag(article.user.image) %>
+      <%= image_tag("http://i.imgur.com/Qr71crq.jpg") %>
+    <% end %>
+    <div class="info">
+      <%= link_to article.user.name, article.user, class: "author" %>
+      <%= content_tag(:span, article.user.created_at.strftime("%B %d,%Y"), class: "date") %>
+    </div>
+    <button class="btn btn-outline-primary btn-sm pull-xs-right">
+      <i class="ion-heart"></i> 0
+    </button>
+  </div>
+  <%= link_to article_path(article), class: "preview-link" do %>
+    <%= content_tag(:h1, article.title) %>
+    <%= content_tag(:p, article.about) %>
+    <span>Read more...</span>
+    <ul class="tag-list">
+      <li class="tag-default tag-pill tag-outline">realworld</li>
+      <li class="tag-default tag-pill tag-outline">implementations</li>
+    </ul>
+  <% end %>
+</div>
