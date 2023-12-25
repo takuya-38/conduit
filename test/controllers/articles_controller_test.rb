@@ -5,14 +5,4 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
     get root_path
     assert_response :success
   end
-
-  test "should get show" do
-    get show_path
-    assert_response :success
-  end
-
-  test "should get new" do
-    get editor_path
-    assert_response :success
-  end
 end

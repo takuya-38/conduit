@@ -18,7 +18,7 @@ end
 
 # ユーザーの一部を対象にマイクロポストを生成する
 users = User.order(:created_at).take(6)
-50.times do
+5.times do
   content = Faker::Lorem.sentence(word_count: 5)
   title = Faker::Lorem.sentence(word_count: 5)
   about = Faker::Lorem.sentence(word_count: 5)

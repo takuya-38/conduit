@@ -24,7 +24,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_template root_path
     assert_select "a[href=?]", login_path, count: 0
     assert_select "a[href=?]", new_user_path, count: 0
-    assert_select "a[href=?]", editor_path
+    assert_select "a[href=?]", new_article_path
     assert_select "a[href=?]", edit_user_path(@user)
     delete logout_path
     assert_not is_logged_in?
@@ -34,7 +34,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_select "a[href=?]", login_path
     assert_select "a[href=?]", new_user_path
-    assert_select "a[href=?]", editor_path, count: 0
+    assert_select "a[href=?]", new_article_path, count: 0
     assert_select "a[href=?]", edit_user_path(@user), count: 0
   end
 end
