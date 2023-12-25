@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
 
   def show
-    @user = User.find(prams[:id])
+    @user = User.find(params[:id])
+    @articles = @user.articles.paginate(page: params[:page])
   end
 
   def new
