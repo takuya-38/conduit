@@ -1,15 +1,40 @@
-# Ruby on Rails チュートリアルのサンプルアプリケーション
+# 提出Quest「Conduit」
 
-これは、次の教材で作られたサンプルアプリケーションです。
-[*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
-（第7版）
-[Michael Hartl](https://www.michaelhartl.com/) 著
+ブログプラットフォームを作る [RealWorld](https://github.com/gothinkster/realworld/tree/main) という OSS のプロジェクトがあります。RealWorld は実世界と同じ機能を持つプラットフォームを作ることで、学習したいフレームワークの技術を習得することを目的としてたプロジェクトです。
 
-## ライセンス
+[Conduit](https://demo.realworld.io/#/) は RealWolrd で作成する Medium.com のクローンサイトです。
 
-[Ruby on Rails チュートリアル](https://railstutorial.jp/)内にある
-ソースコードはMITライセンスとBeerwareライセンスのもとで公開されています。
-詳細は [LICENSE.md](LICENSE.md) をご覧ください。
+今回は Counduit と同じ見た目・機能のサイトを Rails で実装します。
+
+## ステップ1
+
+[RealWorld のドキュメント](https://realworld-docs.netlify.app/docs/specs/frontend-specs/templates) を参考に、次のページの HTML と CSS を実装し、ページを作成してください。この時点では機能は作成せず、見た目を整えるだけでよいです。
+
+- [Home](https://realworld-docs.netlify.app/docs/specs/frontend-specs/templates#home)
+- [Create/Edit Article](https://realworld-docs.netlify.app/docs/specs/frontend-specs/templates#createedit-article)
+- [Article](https://realworld-docs.netlify.app/docs/specs/frontend-specs/templates#article)
+
+なお、Article に関わる要素のうち、認証機能及び著者、お気に入り(`favorite`) は実装しなくてよいものとします。
+
+## ステップ2
+
+ステップ1のページの機能を実装し、動作するようにしてください。
+
+## ステップ3 (advanced)
+
+テストコードを1つでよいので書いてください。
+
+## ステップ４ (advanced)
+
+次のページの HTML と CSS を実装し、ページを作成してください。この時点では機能は作成せず、見た目を整えるだけでよいです。
+
+- [Authentication](https://realworld-docs.netlify.app/docs/specs/frontend-specs/templates#authentication)
+
+## ステップ５ (advanced)
+
+ステップ3のページの機能を実装し、動作するようにしてください。
+
+Article に関わる要素のうち、認証機能及び著者を実装することを想定しています。
 
 ## 使い方
 
@@ -25,6 +50,7 @@ $ bundle _2.4.12_ install
 
 ```
 $ rails db:migrate
+$ rails db:seed
 ```
 
 最後に、テストを実行してうまく動いているかどうか確認してください。
@@ -38,6 +64,3 @@ $ rails test
 ```
 $ rails server
 ```
-
-詳しくは、[*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
-を参考にしてください。
