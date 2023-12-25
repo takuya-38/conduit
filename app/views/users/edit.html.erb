@@ -4,40 +4,29 @@
       <div class="col-md-6 offset-md-3 col-xs-12">
         <h1 class="text-xs-center">Your Settings</h1>
 
-        <ul class="error-messages">
-          <li>That name is required</li>
-        </ul>
-
-        <form>
+        <%= render 'shared/error_messages' %>
+        <%= form_with(model: @user) do |f| %>
           <fieldset>
             <fieldset class="form-group">
-              <input class="form-control" type="text" placeholder="URL of profile picture" />
+              <%= f.text_field :image, class: 'form-control', placeholder: 'URL of profile picture' %>
             </fieldset>
             <fieldset class="form-group">
-              <input class="form-control form-control-lg" type="text" placeholder="Your Name" />
+              <%= f.text_field :name, class: 'form-control form-control-lg', placeholder: 'Your Name' %>
             </fieldset>
             <fieldset class="form-group">
-              <textarea
-                class="form-control form-control-lg"
-                rows="8"
-                placeholder="Short bio about you"
-              ></textarea>
+              <%= f.text_area :bio, class: 'form-control form-control-lg', row: 8, placeholder: 'Short bio about you' %>
             </fieldset>
             <fieldset class="form-group">
-              <input class="form-control form-control-lg" type="text" placeholder="Email" />
+              <%= f.email_field :email, class: 'form-control form-control-lg', placeholder: 'Email' %>
             </fieldset>
             <fieldset class="form-group">
-              <input
-                class="form-control form-control-lg"
-                type="password"
-                placeholder="New Password"
-              />
+              <%= f.password_field :password, class: 'form-control form-control-lg', placeholder: 'New Password' %>
             </fieldset>
-            <button class="btn btn-lg btn-primary pull-xs-right">Update Settings</button>
+            <%= f.submit 'Update Settings', class: 'btn btn-lg btn-primary pull-xs-right' %>
           </fieldset>
-        </form>
+        <% end %>
         <hr />
-        <%= button_to "Or click here to logout.", logout_path, method: :post, class: "btn btn-outline-danger", data: { "turbo-method": :delete } %>
+        <%= link_to 'Or click here to logout.', logout_path, class: 'btn btn-outline-danger', data: { "turbo-method": :delete }  %>
       </div>
     </div>
   </div>
