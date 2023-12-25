@@ -20,7 +20,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                           password:              "foobar00" } }
     end
     follow_redirect!
-    assert_template "article/home"
+    assert_template "articles/home"
     assert_predicate(self, :is_logged_in?)
   end
 end
